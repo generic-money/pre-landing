@@ -515,11 +515,8 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-col items-start gap-2 sm:items-end">
-            <a href="https://generic.money" className="hover:text-[#3F79FF]">
-              generic.money
-            </a>
-            <a href="mailto:hello@generic.money" className="hover:text-[#3F79FF]">
-              hello@generic.money
+            <a href="mailto:partners@generic.money" className="hover:text-[#3F79FF]">
+              partners@generic.money
             </a>
           </div>
         </div>
