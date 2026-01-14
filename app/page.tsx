@@ -242,6 +242,19 @@ export default function Home() {
                   <span>Read the white paper</span>
                   <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
                 </Link>
+
+                <Link
+                  href="https://app.generic.money"
+                  aria-disabled="true"
+                  tabIndex={-1}
+                  title="Coming soon"
+                  className="pointer-events-none inline-flex cursor-not-allowed items-center justify-center rounded-full border border-[#0A0B0D]/20 bg-white/80 px-6 py-3 text-base font-medium text-[#0A0B0D] opacity-80 shadow-sm backdrop-blur"
+                >
+                  <span>Open app</span>
+                  <span className="ml-3 rounded-full border border-[#0A0B0D]/10 bg-[#F5F6FA] px-2 py-0.5 text-[0.7rem] uppercase tracking-[0.24em] text-[#6D6F76]">
+                    Coming soon
+                  </span>
+                </Link>
               </div>
             </div>
 
