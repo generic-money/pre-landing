@@ -82,18 +82,6 @@ const dividerItems: DividerItem[] = [
   },
 ];
 
-const settlementHighlights = [
-  {
-    primary: "LayerZero and native settlement",
-    secondary: "↺ Synced supply",
-    variant: "light" as const,
-  },
-  {
-    primary: "Real yield prime vaults",
-    variant: "accent" as const,
-  },
-];
-
 const trustSignals: TrustSignal[] = [
   {
     label: "Steakhouse",
@@ -230,13 +218,8 @@ export default function Home() {
         <div className="hero-orb hero-orb-sm" />
 
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
             <div className="relative z-10 flex flex-col">
-              <div className="mb-4">
-                <span className="section-kicker badge-rise hero-brand__chip">
-                  Generic USD (GUSD)
-                </span>
-              </div>
               <div className="hero-brand mb-6">
                 <Image
                   src="/full-logo-black.svg"
@@ -254,7 +237,7 @@ export default function Home() {
                 Generic provides stablecoin-as-a-service that delivers you the best risk-adjusted onchain yield and
                 payments-ready privacy without the overhead and cost of offchain issuers.
               </p>
-              <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row">
+              <div className="mt-12 flex flex-col items-start gap-4 sm:flex-row">
                 <Link
                   href="mailto:partners@generic.money"
                   className="group inline-flex items-center justify-center rounded-full border border-[#3F79FF] bg-[#3F79FF] px-8 py-3 text-base font-medium text-white shadow-[0_22px_60px_rgba(63,121,255,0.28)] transition hover:bg-[#3566d9]"
@@ -270,80 +253,9 @@ export default function Home() {
                   <span>Read the docs</span>
                 </Link>
               </div>
+              <div className="mt-8" />
             </div>
 
-            <div className="relative z-10">
-              <div className="hero-stage">
-                <span className="hero-stage-glow" />
-                <span className="hero-stage-grid" />
-                <span className="hero-stage-beam" />
-
-                <div className="hero-stage-window">
-                  <Image
-                    src="/window.svg"
-                    alt="Generic liquidity viewport"
-                    fill
-                    sizes="(min-width: 1024px) 480px, 82vw"
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-
-                <div className="hero-stage-token">
-                  <Image src="/brand-mark.svg" alt="Generic emblem" width={64} height={64} />
-                </div>
-
-                <div className="hero-stage-orbit">
-                  <Image src="/globe.svg" alt="Rollup footprint" width={80} height={80} />
-                </div>
-
-                <div className="hero-stage-orbit hero-stage-orbit-alt">
-                  <Image src="/file.svg" alt="Onchain audit file" width={72} height={72} />
-                </div>
-
-                <div className="glass-card hero-stage-card overflow-hidden rounded-[2.4rem] p-8">
-                  <div className="flex items-center gap-3 text-sm text-[#6D6F76]">
-                    <span>Audited by:</span>
-                    <span className="inline-flex items-center gap-2 rounded-full border border-[#3F79FF]/40 bg-white/70 px-3 py-1 text-xs font-medium text-[#3F79FF]">
-                      Spearbit
-                    </span>
-                  </div>
-                  <div className="mt-8 flex items-center gap-4">
-                    <div className="relative h-16 w-16 rounded-2xl bg-[#E0EAFF]/70">
-                      <div className="absolute inset-2 flex items-center justify-center rounded-xl bg-white">
-                        <Image src="/brand-mark.svg" alt="Generic mark" width={40} height={40} />
-                      </div>
-                    </div>
-                    <div>
-                      <p className="text-[0.7rem] uppercase tracking-[0.3em] text-[#6D6F76]">Transparent Operation</p>
-                      <p className="mt-1 font-display text-xl text-[#0A0B0D]">One balance, all networks.</p>
-                    </div>
-                  </div>
-                  <div className="mt-8 space-y-3 text-sm text-[#393B40]">
-                    <p>Canonical supply lives on Ethereum while mirrored balances only get minted through this backed assets.</p>
-                    <p>Collateral yield refills program buffers before streaming to ecosystems and treasury.</p>
-                  </div>
-
-                  <div className="mt-8 grid gap-3">
-                    {settlementHighlights.map((highlight) => (
-                      <div
-                        key={highlight.primary}
-                        className={`flex items-center justify-between rounded-2xl border px-4 py-3 text-xs uppercase tracking-[0.24em] ${
-                          highlight.variant === "accent"
-                            ? "border-[#3F79FF]/30 bg-[#3F79FF]/10 text-[#0A0B0D]"
-                            : "border-white/40 bg-white/70 text-[#3F79FF]"
-                        }`}
-                      >
-                        <span>{highlight.primary}</span>
-                        {highlight.secondary ? (
-                          <span>{highlight.secondary}</span>
-                        ) : null}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
           <div className="mt-14">
@@ -357,9 +269,10 @@ export default function Home() {
                   <p className="mt-2 text-xs uppercase tracking-[0.2em] text-[#6D6F76]">{stat.label}</p>
                 </div>
               ))}
+              </div>
             </div>
+            <div className="hidden lg:block" aria-hidden />
           </div>
-        </div>
       </section>
 
       <div className="hero-divider">
@@ -425,7 +338,7 @@ export default function Home() {
 
       <section className="relative isolate border-y border-black/5 bg-diagonal-fade px-6 py-24 sm:px-10">
         <div className="mx-auto max-w-6xl">
-          <span className="section-kicker">Yours</span>
+          <span className="section-kicker">Yield</span>
           <h2 className="section-heading">How it works - liquidity and yield</h2>
           <p className="mt-4 max-w-3xl text-lg text-[#393B40]">
             Generic builds on top of the most widely adopted stablecoins (USDC/USDT/USDS) to provide apps and networks with
