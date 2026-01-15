@@ -24,6 +24,12 @@ type TrustSignal = {
   logoText?: string;
 };
 
+type HeroStat = {
+  value: string;
+  label: string;
+  Icon: LucideIcon;
+};
+
 type BenefitHighlight = {
   title: string;
   bullets: string[];
@@ -35,23 +41,27 @@ type DividerItem = {
   Icon: LucideIcon;
 };
 
-const heroStats = [
+const heroStats: HeroStat[] = [
   {
     value: "Shared liquidity",
     label: "Each instance is customisable on top of a shared liquidity and accounting layer, compounding integrations",
+    Icon: Layers,
   },
   {
     value: "Neutral economics",
     label: "You get the best risk-adjusted onchain yield to fund adoption without the cost of issuer dependencies",
+    Icon: CircleDollarSign,
   },
   {
     value: "Embedded privacy",
     label: "Protocol-level integrated privacy and confidentiality at a speed suitable for everyday payments",
+    Icon: LockKeyhole,
   },
   {
     value: "Security first",
     label:
       "Fully onchain, Tier 1 audits and the best risk curation delivering uncompromising security and transparency",
+    Icon: ShieldCheck,
   },
 ];
 
@@ -262,9 +272,12 @@ export default function Home() {
               {heroStats.map((stat) => (
                 <div
                   key={stat.value}
-                  className="h-full rounded-3xl border border-black/[0.08] bg-white/90 p-5 shadow-[0_10px_24px_rgba(15,23,42,0.06)] sm:p-6 lg:p-7"
+                  className="relative h-full rounded-3xl border border-black/[0.08] bg-white/90 p-5 shadow-[0_10px_24px_rgba(15,23,42,0.06)] sm:p-6 lg:p-7"
                 >
-                  <p className="font-display text-2xl text-[#111318]">{stat.value}</p>
+                  <span className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full bg-black/5 text-[#1A1C20] sm:right-5 sm:top-5">
+                    <stat.Icon className="h-4 w-4" aria-hidden />
+                  </span>
+                  <p className="font-display text-xl text-[#111318]">{stat.value}</p>
                   <p className="mt-2 text-sm text-[#6D6F76]">{stat.label}</p>
                 </div>
               ))}
