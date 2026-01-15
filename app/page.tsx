@@ -1,17 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import {
-  BadgeCheck,
-  CircleDollarSign,
-  FileText,
-  Layers,
-  LockKeyhole,
-  NotebookText,
-  Plug,
-  RefreshCcw,
-  Scale,
-  ShieldCheck,
-  Zap,
-} from "lucide-react";
+import { CircleDollarSign, Layers, LockKeyhole, Plug, RefreshCcw, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -65,33 +53,6 @@ const heroStats: HeroStat[] = [
   },
 ];
 
-const dividerItems: DividerItem[] = [
-  {
-    label: "Transparency report",
-    Icon: FileText,
-  },
-  {
-    label: "Policy-aligned liquidity",
-    Icon: Scale,
-  },
-  {
-    label: "Transparent and independent attestations",
-    Icon: BadgeCheck,
-  },
-  {
-    label: "LayerZero fast settlement",
-    Icon: Zap,
-  },
-  {
-    label: "Native trustless settlement",
-    Icon: LockKeyhole,
-  },
-  {
-    label: "Documented and open operations",
-    Icon: NotebookText,
-  },
-];
-
 const trustSignals: TrustSignal[] = [
   {
     label: "Steakhouse",
@@ -100,12 +61,10 @@ const trustSignals: TrustSignal[] = [
     logoAlt: "Steakhouse icon",
   },
   {
-    label: "Morpho + Sky (USDS)",
+    label: "Morpho",
     value: "Yield sourcing and collateral rails",
-    logos: [
-      { src: "/partners/morpho.png", alt: "Morpho logo" },
-      { src: "/partners/sky.png", alt: "Sky logo" },
-    ],
+    logoSrc: "/partners/morpho.png",
+    logoAlt: "Morpho logo",
   },
   {
     label: "LayerZero",
@@ -147,7 +106,7 @@ const narrativeMilestones = [
     title: "Yield",
     bullets: [
       "Collateral is allocated into curated onchain strategies on Ethereum.",
-      "Yield accrues back and is passed to the distributions layer.",
+      "Yield accrues back and is passed to the distribution layer.",
       "Yield funds liquidity, incentives, and ecosystem programs, creating a compounding adoption loop.",
     ],
   },
@@ -249,7 +208,7 @@ export default function Home() {
               </p>
               <div className="mt-14 flex flex-col items-start gap-4 sm:flex-row">
                 <Link
-                  href="mailto:partners@generic.money"
+                  href="mailto:generic@generic.money"
                   className="group inline-flex items-center justify-center rounded-full border border-[#3F79FF] bg-[#3F79FF] px-7 py-2.5 text-base font-medium text-white shadow-[0_10px_24px_rgba(63,121,255,0.2)] transition hover:bg-[#3566d9]"
                 >
                   <span>Build with Generic</span>
@@ -285,19 +244,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <div className="hero-divider">
-        <div className="hero-divider-track">
-          {dividerItems.concat(dividerItems).map((item, index) => (
-            <span key={`${item.label}-${index}`} className="hero-divider-item">
-              <span className="hero-divider-icon" aria-hidden>
-                <item.Icon className="h-4 w-4" />
-              </span>
-              {item.label}
-            </span>
-          ))}
-        </div>
-      </div>
 
       <section className="relative isolate px-6 py-16 sm:px-10">
         <div className="mx-auto max-w-6xl">
