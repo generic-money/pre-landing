@@ -347,15 +347,8 @@
   }
 
   .trust-strip {
-    margin-top: 2.75rem;
-    display: grid;
-    gap: 1.25rem;
-    padding: 1.2rem 1.5rem;
-    border-radius: 1.75rem;
-    border: 1px solid rgba(10, 11, 13, 0.08);
-    background: rgba(255, 255, 255, 0.82);
-    box-shadow: 0 16px 40px rgba(10, 11, 13, 0.06);
-    backdrop-filter: blur(18px);
+    margin-top: 2.5rem;
+    display: block;
   }
 
   .trust-strip__summary {
@@ -386,29 +379,51 @@
   }
 
   .trust-strip__items {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+    display: grid;
+    gap: 1rem;
   }
 
   .trust-strip__item {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.6rem 0.75rem;
+    display: grid;
+    gap: 0.6rem;
+    padding: 1.1rem 1.2rem;
     border-radius: 1.25rem;
     border: 1px solid rgba(10, 11, 13, 0.06);
-    background: rgba(255, 255, 255, 0.78);
+    background: rgba(255, 255, 255, 0.75);
+    min-height: 7rem;
   }
 
   .trust-strip__logo {
     flex-shrink: 0;
     display: grid;
     place-items: center;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 1.1rem;
+    background: rgba(63, 121, 255, 0.12);
+  }
+
+  .trust-strip__logo--stack {
+    display: flex;
+    gap: 0.4rem;
+    width: auto;
+    height: auto;
+    padding: 0.4rem 0.55rem;
+  }
+
+  .trust-strip__logo-stack {
+    display: grid;
+    place-items: center;
+    width: 2.6rem;
+    height: 2.6rem;
     border-radius: 0.9rem;
-    background: rgba(63, 121, 255, 0.1);
+    background: rgba(63, 121, 255, 0.12);
+  }
+
+  .trust-strip__logo-image {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
   }
 
   .trust-strip__meta {
@@ -417,14 +432,14 @@
   }
 
   .trust-strip__meta-label {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     text-transform: uppercase;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.16em;
     color: rgba(109, 111, 118, 0.9);
   }
 
   .trust-strip__meta-value {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: rgba(10, 11, 13, 0.82);
     font-weight: 500;
   }
@@ -435,19 +450,21 @@
     background: rgba(255, 255, 255, 0.6);
   }
 
-  @media (min-width: 768px) {
-    .trust-strip {
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      align-items: center;
-      padding: 1.4rem 1.8rem;
-    }
-
+  @media (min-width: 640px) {
     .trust-strip__items {
-      flex-direction: row;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+  }
 
-    .trust-strip__item {
-      flex: 1;
+  @media (min-width: 900px) {
+    .trust-strip__items {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .trust-strip__items {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
     }
   }
 

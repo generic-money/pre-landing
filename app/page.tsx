@@ -18,6 +18,7 @@ import Link from "next/link";
 type TrustSignal = {
   label: string;
   value: string;
+  logos?: { src: string; alt: string }[];
   logoSrc?: string;
   logoAlt?: string;
   logoText?: string;
@@ -25,7 +26,7 @@ type TrustSignal = {
 
 type BenefitHighlight = {
   title: string;
-  description: string;
+  bullets: string[];
   Icon: LucideIcon;
 };
 
@@ -36,17 +37,21 @@ type DividerItem = {
 
 const heroStats = [
   {
-    value: "Fully onchain",
-    label: "Generic only uses onchain strategies, all our backings are transparent to users and clients",
+    value: "Shared liquidity",
+    label: "Each instance is customisable on top of a shared liquidity and accounting layer, compounding integrations",
   },
   {
-    value: "1:1",
-    label: "Fully collateralized ERC-4626 vaults with exposure limits",
+    value: "Neutral economics",
+    label: "You get the best risk-adjusted onchain yield to fund adoption without the cost of issuer dependencies",
+  },
+  {
+    value: "Embedded privacy",
+    label: "Protocol-level integrated privacy and confidentiality at a speed suitable for everyday payments",
   },
   {
     value: "Security first",
     label:
-      "We only work with the best industry. Steakhouse is our curator and risk manager, audited by Spearbit.",
+      "Fully onchain, Tier 1 audits and the best risk curation delivering uncompromising security and transparency",
   },
 ];
 
@@ -91,104 +96,97 @@ const settlementHighlights = [
 
 const trustSignals: TrustSignal[] = [
   {
-    label: "Security Audit",
-    value: "Spearbit",
-    logoSrc: "/brand-mark.svg",
-    logoAlt: "Spearbit audit badge",
+    label: "Steakhouse",
+    value: "Risk curation and strategy",
+    logoSrc: "/partners/steakhouse-icon.svg",
+    logoAlt: "Steakhouse icon",
   },
   {
-    label: "Vault Manager",
-    value: "Steakhouse Financial",
-    logoSrc: "/steakhouse-icon.svg",
-    logoAlt: "Steakhouse Financial icon",
+    label: "Morpho + Sky (USDS)",
+    value: "Yield sourcing and collateral rails",
+    logos: [
+      { src: "/partners/morpho.png", alt: "Morpho logo" },
+      { src: "/partners/sky.png", alt: "Sky logo" },
+    ],
   },
   {
-    label: "Messaging Layer",
-    value: "LayerZero",
-    logoSrc: "/layerzero-icon.svg",
+    label: "LayerZero",
+    value: "Cross-chain messaging",
+    logoSrc: "/partners/layerzero-icon.svg",
     logoAlt: "LayerZero icon",
+  },
+  {
+    label: "Merkl",
+    value: "Incentive rails for yield distribution",
+    logoSrc: "/partners/merkl.png",
+    logoAlt: "Merkl logo",
+  },
+  {
+    label: "Aragon",
+    value: "Value accrual infrastructure",
+    logoSrc: "/partners/aragon.png",
+    logoAlt: "Aragon logo",
   },
 ];
 
 const narrativeMilestones = [
   {
-    title: "Review & customize",
-    description:
-      "Check the contracts and the docs, review our transparency reports and contact us to get to know how to make GUSD yours.",
+    title: "Minting",
+    bullets: [
+      "Mint GUSD to the target network/app through Generic (abstracted).",
+      "1:1 backed by stablecoin collateral held in the Generic Protocol.",
+      "Networks/apps run their own configurable wrapper on GUSD while benefitting from the shared rails (liquidity and integrations).",
+    ],
   },
   {
-    title: "Mint with controls",
-    description:
-      "We’ll deploy the whitelabel for you and we’ll send the yield right where you tell use so it can be used to benefit your network",
+    title: "Usage",
+    bullets: [
+      "GUSD is usable as the default onchain dollar across the stack.",
+      "Provide DEX liquidity, lend/borrow in money markets, stake as sGUSD, make private payments.",
+    ],
   },
   {
-    title: "Monitor & report",
-    description:
-      "Work with our team to define reporting cadences, escalation paths, and dashboards so your stakeholders stay informed at every step.",
+    title: "Yield",
+    bullets: [
+      "Collateral is allocated into curated onchain strategies on Ethereum.",
+      "Yield accrues back and is passed to the distributions layer.",
+      "Yield funds liquidity, incentives, and ecosystem programs, creating a compounding adoption loop.",
+    ],
   },
 ];
 
 const benefitHighlights: BenefitHighlight[] = [
   {
-    title: "Canonical across rollups",
-    description:
-      "Choose your preferred messaging channel to move balances across chains securely and fast.",
+    title: "Compounding liquidity and integrations",
+    bullets: [
+      "Liquidity remains unified through shared rails.",
+      "With a single pattern, integrations are composable across stablecoin instances.",
+    ],
     Icon: Layers,
   },
   {
-    title: "Native yield",
-    description:
-      "Onchain yields in prime vaults have consistently had higher yields that offchain T Bill, while keeping funds backed by safe collaterals",
+    title: "Yield that funds adoption",
+    bullets: [
+      "You receive the best onchain yield to fund liquidity, incentives, or share with users.",
+      "Adoption turns the yield into an ongoing revenue stream for you, not an issuer.",
+    ],
     Icon: CircleDollarSign,
   },
   {
-    title: "Operational assurance",
-    description:
-      "Programmatic limits, change windows, and human sign-off protect every contract or policy update. From the team at Aragon that manages some of the most critical security councils in the industry",
+    title: "Payments-ready confidentiality",
+    bullets: [
+      "FHE-powered Privacy Pool for confidential balances and transfers.",
+      '"Prove when needed" for regulated endpoints, without slowing every transfer.',
+    ],
     Icon: ShieldCheck,
   },
   {
-    title: "Integration ready",
-    description:
-      "Attestations, and standardized APIs make it simple for exchanges and protocols to integrate.",
+    title: "Your instance, without issuer overhead",
+    bullets: [
+      "Each network or app configures its instance: limits, disclosure modes, yield routing.",
+      "No offchain issuer stack to depend on or pay rent to.",
+    ],
     Icon: Plug,
-  },
-];
-
-const proofColumns = [
-  {
-    title: "Controls you can verify",
-    bullets: [
-      "Segregated collateral wallets with automated exposure thresholds.",
-      "Real-time attestation feed comparing canonical and rollup balances.",
-      "First-loss reserve absorbs volatility before user balances move.",
-    ],
-  },
-  {
-    title: "Reporting that travels with you",
-    bullets: [
-      "Real-time dashboards for supply, buffer health, and oracle status.",
-      "Audit trail with change control diffs and incident communications.",
-      "10% protocol fee disclosed with treasury distribution reporting.",
-    ],
-  },
-];
-
-const faqs = [
-  {
-    question: "What makes GUSD different from bridged stablecoins?",
-    answer:
-      "While other stablecoins stay idle in your product not being capital efficient, GUSD will generate yield that will directly go to your network address.",
-  },
-  {
-    question: "How is collateral managed and audited?",
-    answer:
-      "Collateral lives in segregated ERC-4626 vaults managed by Steakhouse Financial. Spearbit and other reviewers assess contracts, and daily attestations confirm vault balances against circulating supply.",
-  },
-  {
-    question: "Where can I review the yield distribution policy?",
-    answer:
-      "All the generate yield will be transferred over to your designated address on a weekly period, while generic keeps a fee of it to sustain the protocol.",
   },
 ];
 
@@ -223,37 +221,26 @@ export default function Home() {
                 />
               </div>
               <h1 className="font-display text-[2.4rem] leading-tight text-[#0A0B0D] sm:text-[3rem] lg:text-[3.6rem]">
-                <span className="block">
-                  Launch your native stablecoin, <br />
-                  no issuer needed
-                </span>
+                <span className="block">Build a better onchain dollar that is yours</span>
               </h1>
               <p className="mt-6 max-w-2xl text-lg text-[#393B40]/90 sm:text-xl">
-                Generic connects Ethereum&apos;s collateral to rollup liquidity with documented controls, live strategies and
-                audited reporting.
+                Generic provides stablecoin-as-a-service that delivers you the best risk-adjusted onchain yield and
+                payments-ready privacy without the overhead and cost of offchain issuers.
               </p>
               <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row">
                 <Link
-                  href="/whitepaper.pdf"
-                  target="_blank"
-                  rel="noreferrer"
+                  href="mailto:partners@generic.money"
                   className="group inline-flex items-center justify-center rounded-full border border-[#3F79FF] bg-[#3F79FF] px-8 py-3 text-base font-medium text-white shadow-[0_22px_60px_rgba(63,121,255,0.28)] transition hover:bg-[#3566d9]"
                 >
-                  <span>Read the white paper</span>
+                  <span>Build with Generic</span>
                   <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
                 </Link>
 
                 <Link
-                  href="https://app.generic.money"
-                  aria-disabled="true"
-                  tabIndex={-1}
-                  title="Coming soon"
-                  className="pointer-events-none inline-flex cursor-not-allowed items-center justify-center rounded-full border border-[#0A0B0D]/20 bg-white/80 px-6 py-3 text-base font-medium text-[#0A0B0D] opacity-80 shadow-sm backdrop-blur"
+                  href="https://docs.generic.money"
+                  className="inline-flex items-center justify-center rounded-full border border-[#0A0B0D]/20 bg-white/80 px-6 py-3 text-base font-medium text-[#0A0B0D] shadow-sm backdrop-blur transition hover:border-[#0A0B0D]/30 hover:bg-white"
                 >
-                  <span>Open app</span>
-                  <span className="ml-3 rounded-full border border-[#0A0B0D]/10 bg-[#F5F6FA] px-2 py-0.5 text-[0.7rem] uppercase tracking-[0.24em] text-[#6D6F76]">
-                    Coming soon
-                  </span>
+                  <span>Read the docs</span>
                 </Link>
               </div>
             </div>
@@ -288,8 +275,8 @@ export default function Home() {
                 </div>
 
                 <div className="glass-card hero-stage-card overflow-hidden rounded-[2.4rem] p-8">
-                  <div className="flex items-center justify-between text-sm text-[#6D6F76]">
-                    <span>In Audits</span>
+                  <div className="flex items-center gap-3 text-sm text-[#6D6F76]">
+                    <span>Audited by:</span>
                     <span className="inline-flex items-center gap-2 rounded-full border border-[#3F79FF]/40 bg-white/70 px-3 py-1 text-xs font-medium text-[#3F79FF]">
                       Spearbit
                     </span>
@@ -332,8 +319,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-14 flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-8">
-            <div className="grid flex-1 min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8">
+          <div className="mt-14">
+            <div className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:gap-8">
               {heroStats.map((stat) => (
                 <div
                   key={stat.value}
@@ -343,16 +330,6 @@ export default function Home() {
                   <p className="mt-2 text-xs uppercase tracking-[0.2em] text-[#6D6F76]">{stat.label}</p>
                 </div>
               ))}
-            </div>
-
-            <div className="flex-none self-start pl-4 lg:pl-8">
-              <div className="floating-chip inline-flex items-center gap-2 rounded-full border border-[#3F79FF]/40 bg-white/80 px-3 py-1.5 text-sm text-[#0A0B0D] backdrop-blur">
-                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#3F79FF]/15 text-[#3F79FF]">
-                  <RefreshCcw className="h-3.5 w-3.5" aria-hidden />
-                  <span className="sr-only">Real-time reserves</span>
-                </span>
-                Real-time reserves
-              </div>
             </div>
           </div>
         </div>
@@ -374,27 +351,36 @@ export default function Home() {
       <section className="relative isolate px-6 py-20 sm:px-10">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-3xl">
-            <span className="section-kicker">Transparent Security</span>
-            <h2 className="section-heading">Independent partners validate the programme</h2>
+            <span className="section-kicker">Partners</span>
+            <h2 className="section-heading">Partners</h2>
             <p className="mt-4 text-base text-[#393B40] sm:text-lg">
-              Oversight partners are disclosed up front so risk, legal, and engineering teams understand who operates each
-              layer and how reviews are progressing.
+              We are building Generic with best-in-class partners across yield sourcing, risk curation, cross-chain
+              messaging, value routing and more.
             </p>
           </div>
 
           <div className="trust-strip trust-strip--standalone mt-10" aria-label="Oversight and infrastructure partners">
-            <div className="trust-strip__summary">
-              <span className="trust-strip__label">Security by top players</span>
-              <p className="trust-strip__quote">
-                Controls-first architecture for cross-chain USD.
-              </p>
-            </div>
             <div className="trust-strip__items">
               {trustSignals.map((item) => (
                 <div key={item.value} className="trust-strip__item">
-                  <div className="trust-strip__logo" aria-hidden>
-                    {item.logoSrc ? (
-                      <Image src={item.logoSrc} alt={item.logoAlt ?? item.value} width={40} height={40} />
+                  <div
+                    className={`trust-strip__logo ${item.logos ? "trust-strip__logo--stack" : ""}`}
+                    aria-hidden
+                  >
+                    {item.logos ? (
+                      item.logos.map((logo) => (
+                        <span key={logo.src} className="trust-strip__logo-stack">
+                          <Image src={logo.src} alt={logo.alt} width={28} height={28} className="trust-strip__logo-image" />
+                        </span>
+                      ))
+                    ) : item.logoSrc ? (
+                      <Image
+                        src={item.logoSrc}
+                        alt={item.logoAlt ?? item.value}
+                        width={36}
+                        height={36}
+                        className="trust-strip__logo-image"
+                      />
                     ) : (
                       <span className="trust-strip__logo-text">{item.logoText}</span>
                     )}
@@ -413,11 +399,23 @@ export default function Home() {
       <section className="relative isolate border-y border-black/5 bg-diagonal-fade px-6 py-24 sm:px-10">
         <div className="mx-auto max-w-6xl">
           <span className="section-kicker">Yours</span>
-          <h2 className="section-heading">Your whitelabel stablecoin made easy</h2>
+          <h2 className="section-heading">How it works - liquidity and yield</h2>
           <p className="mt-4 max-w-3xl text-lg text-[#393B40]">
-            GUSD is structured so legal, risk, and product teams can agree on a single lifecycle. Each step is auditable,
-            codified, and synchronized across every supported chain.
+            Generic builds on top of the most widely adopted stablecoins (USDC/USDT/USDS) to provide apps and networks with
+            their own native dollar. Liquidity and integrations are shared across the system to ensure network effects
+            compound, while each instance is configurable.
           </p>
+
+          <div className="mt-12 overflow-hidden rounded-[2.5rem] border border-white/60 bg-white/40 shadow-[0_18px_55px_rgba(60,84,145,0.16)] backdrop-blur">
+            <Image
+              src="/how-it-works.png"
+              alt="How it works flow diagram"
+              width={3344}
+              height={1742}
+              sizes="(min-width: 1024px) 1024px, 100vw"
+              className="h-auto w-full object-contain"
+            />
+          </div>
 
           <div className="narrative-timeline mt-12">
             {narrativeMilestones.map((milestone, index) => (
@@ -425,7 +423,11 @@ export default function Home() {
                 <span className="narrative-step__index">0{index + 1}</span>
                 <div className="narrative-step__body">
                   <h3 className="narrative-step__title">{milestone.title}</h3>
-                  <p className="narrative-step__description">{milestone.description}</p>
+                  <ul className="narrative-step__description mt-2 space-y-2 text-sm text-[#393B40]">
+                    {milestone.bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ))}
@@ -436,80 +438,24 @@ export default function Home() {
       <section className="relative isolate px-6 py-24 sm:px-10">
         <div className="mx-auto max-w-6xl">
           <span className="section-kicker">Benefits</span>
-          <h2 className="section-heading">Designed to keep projects and ecosystems aligned</h2>
+          <h2 className="section-heading">Fueling your growth</h2>
           <p className="mt-4 max-w-3xl text-lg text-[#393B40]">
-            From real-yield generation to rollout-ready integrations, GUSD prioritizes clarity and differentiated controls so
-            partners can activate capital with confidence.
+            Generic helps you build a stablecoin that serves as a growth engine by delivering shared liquidity, configurable
+            instances, yield you direct to fund adoption, and privacy that works in practice.
           </p>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {benefitHighlights.map(({ title, description, Icon }) => (
+            {benefitHighlights.map(({ title, bullets, Icon }) => (
               <div key={title} className="benefit-card">
                 <span className="benefit-card__icon" aria-hidden>
                   <Icon className="h-5 w-5" />
                 </span>
                 <h3 className="benefit-card__title">{title}</h3>
-                <p className="benefit-card__description">{description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="relative isolate border-y border-black/5 bg-white/80 px-6 py-24 sm:px-10">
-        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-          <div>
-            <span className="section-kicker">Proof</span>
-            <h2 className="section-heading">Transparency, controls, and separation of concerns by design</h2>
-            <p className="mt-4 text-lg text-[#393B40]">
-              Each policy ships with verifiable artifacts—from contract audits and buffer thresholds to real-time reporting
-              feeds—so diligence teams can confirm controls before launch.
-            </p>
-
-            <div className="mt-10 space-y-6">
-              {proofColumns.map((column) => (
-                <div key={column.title} className="proof-card">
-                  <h3 className="proof-card__title">{column.title}</h3>
-                  <ul className="proof-card__list">
-                    {column.bullets.map((bullet) => (
-                      <li key={bullet}>
-                        <span className="proof-card__dot" />
-                        <span>{bullet}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex flex-col justify-end">
-            <div className="cta-panel">
-              <p className="cta-panel__title">Need diligence materials?</p>
-              <p className="cta-panel__description">
-                Request the compliance pack for technical diagrams, monitoring hooks, and documentation.
-              </p>
-              <Link
-                href="mailto:hello@generic.money"
-                className="cta-panel__button"
-              >
-                Request the pack
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="relative isolate px-6 py-24 sm:px-10">
-        <div className="mx-auto max-w-5xl">
-          <span className="section-kicker">FAQs</span>
-          <h2 className="section-heading">It’s yours, but we have some answers</h2>
-
-          <div className="mt-10 space-y-4">
-            {faqs.map((faq) => (
-              <div key={faq.question} className="faq-item">
-                <h3 className="faq-item__question">{faq.question}</h3>
-                <p className="faq-item__answer">{faq.answer}</p>
+                <ul className="benefit-card__description mt-3 space-y-2 text-sm text-[#393B40]">
+                  {bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
