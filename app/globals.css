@@ -404,11 +404,12 @@
   }
 
   .trust-strip__logo--stack {
-    display: flex;
-    gap: 0.4rem;
+    display: inline-flex;
+    gap: 0.5rem;
     width: auto;
     height: auto;
-    padding: 0.4rem 0.55rem;
+    padding: 0;
+    background: transparent;
   }
 
   .trust-strip__logo-stack {

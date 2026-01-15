@@ -155,6 +155,33 @@ const narrativeMilestones = [
   },
 ];
 
+const privacyMilestones = [
+  {
+    title: "Private mint",
+    bullets: [
+      "Users mint directly into the Privacy Pool in one step.",
+      "A single KYT check is executed, providing the transfer with a “clean” attestation without exposing the user.",
+      "Users transact without re-running checks on every hop, removing payment latency.",
+    ],
+  },
+  {
+    title: "Confidential payments through FHE balances",
+    bullets: [
+      "Balances and amounts remain confidential at the protocol level via FHE.",
+      "Transfers stay compatible with standard onchain routing and settlement.",
+      "Payment UX gets fast without “compliance latency” baked into every transfer.",
+    ],
+  },
+  {
+    title: "Selective disclosure",
+    bullets: [
+      "Users can generate exclusion proofs to show they’re not associated with flagged activity.",
+      "Selective disclosure supports regulated endpoints without global deanonymisation.",
+      "Privacy where it matters, credibility where it’s required.",
+    ],
+  },
+];
+
 const benefitHighlights: BenefitHighlight[] = [
   {
     title: "Compounding liquidity and integrations",
@@ -419,6 +446,33 @@ export default function Home() {
 
           <div className="narrative-timeline mt-12">
             {narrativeMilestones.map((milestone, index) => (
+              <div key={milestone.title} className="narrative-step">
+                <span className="narrative-step__index">0{index + 1}</span>
+                <div className="narrative-step__body">
+                  <h3 className="narrative-step__title">{milestone.title}</h3>
+                  <ul className="narrative-step__description mt-2 space-y-2 text-sm text-[#393B40]">
+                    {milestone.bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative isolate px-6 py-24 sm:px-10">
+        <div className="mx-auto max-w-6xl">
+          <span className="section-kicker">Privacy</span>
+          <h2 className="section-heading">How it works - practical privacy</h2>
+          <p className="mt-4 max-w-3xl text-lg text-[#393B40]">
+            Generic makes GUSD usable as money: private by default, provable on demand. It combines an FHE-powered Privacy
+            Pool with compliance-grade proofs, so payments use cases don’t collapse into compliance friction and latency.
+          </p>
+
+          <div className="narrative-timeline mt-12">
+            {privacyMilestones.map((milestone, index) => (
               <div key={milestone.title} className="narrative-step">
                 <span className="narrative-step__index">0{index + 1}</span>
                 <div className="narrative-step__body">
