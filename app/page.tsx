@@ -394,7 +394,6 @@ export default function Home() {
             </span>
             <div>
               <p className="font-display text-base">Generic</p>
-              <p className="text-xs text-[#6D6F76]">Unified liquidity for Ethereum.</p>
             </div>
           </div>
           <div className="flex flex-col items-start gap-2 sm:items-end">
