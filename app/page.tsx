@@ -99,7 +99,7 @@ const trustSignals: TrustSignal[] = [
   },
   {
     label: "LayerZero",
-    value: "Cross-chain messaging",
+    value: "Instant cross-chain messaging",
     logoSrc: "/partners/layerzero-icon.svg",
     logoAlt: "LayerZero icon",
   },
@@ -210,7 +210,7 @@ export default function Home() {
     <main className="relative overflow-hidden bg-[#F5F6FA] text-[#0A0B0D]">
       <div className="pointer-events-none absolute inset-0 -z-20 bg-generic-grid" />
 
-      <section className="relative isolate px-6 pb-24 pt-32 sm:px-10 lg:pt-36">
+      <section className="relative isolate px-6 pb-28 pt-32 sm:px-10 lg:pt-36">
         <div className="hero-surface" />
         <div className="hero-ribbon" />
         <div className="hero-ribbon-alt" />
@@ -218,7 +218,7 @@ export default function Home() {
         <div className="hero-orb hero-orb-sm" />
 
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+          <div className="grid gap-16">
             <div className="relative z-10 flex flex-col">
               <div className="hero-brand mb-6">
                 <Image
@@ -231,16 +231,16 @@ export default function Home() {
                 />
               </div>
               <h1 className="font-display text-[2.4rem] leading-tight text-[#0A0B0D] sm:text-[3rem] lg:text-[3.6rem]">
-                <span className="block">Build a better onchain dollar that is yours</span>
+                <span className="block">Build a better onchain dollar</span>
               </h1>
-              <p className="mt-6 max-w-2xl text-lg text-[#393B40]/90 sm:text-xl">
+              <p className="mt-7 max-w-2xl text-base leading-6 text-[#393B40]/90 sm:text-lg sm:leading-7">
                 Generic provides stablecoin-as-a-service that delivers you the best risk-adjusted onchain yield and
                 payments-ready privacy without the overhead and cost of offchain issuers.
               </p>
-              <div className="mt-12 flex flex-col items-start gap-4 sm:flex-row">
+              <div className="mt-14 flex flex-col items-start gap-4 sm:flex-row">
                 <Link
                   href="mailto:partners@generic.money"
-                  className="group inline-flex items-center justify-center rounded-full border border-[#3F79FF] bg-[#3F79FF] px-8 py-3 text-base font-medium text-white shadow-[0_22px_60px_rgba(63,121,255,0.28)] transition hover:bg-[#3566d9]"
+                  className="group inline-flex items-center justify-center rounded-full border border-[#3F79FF] bg-[#3F79FF] px-7 py-2.5 text-base font-medium text-white shadow-[0_10px_24px_rgba(63,121,255,0.2)] transition hover:bg-[#3566d9]"
                 >
                   <span>Build with Generic</span>
                   <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
@@ -248,31 +248,29 @@ export default function Home() {
 
                 <Link
                   href="https://docs.generic.money"
-                  className="inline-flex items-center justify-center rounded-full border border-[#0A0B0D]/20 bg-white/80 px-6 py-3 text-base font-medium text-[#0A0B0D] shadow-sm backdrop-blur transition hover:border-[#0A0B0D]/30 hover:bg-white"
+                  className="inline-flex items-center justify-center rounded-full border border-[#0A0B0D]/20 bg-white/80 px-6 py-2.5 text-base font-medium text-[#0A0B0D] shadow-[0_8px_18px_rgba(15,23,42,0.08)] transition hover:border-[#0A0B0D]/30 hover:bg-white"
                 >
                   <span>Read the docs</span>
                 </Link>
               </div>
-              <div className="mt-8" />
+              <div className="mt-12" />
             </div>
-
           </div>
 
-          <div className="mt-14">
+          <div className="mt-18">
             <div className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:gap-8">
               {heroStats.map((stat) => (
                 <div
                   key={stat.value}
-                  className="h-full rounded-3xl border border-black/[0.04] bg-white/80 p-5 sm:p-6 lg:p-7 backdrop-blur"
+                  className="h-full rounded-3xl border border-black/[0.08] bg-white/90 p-5 shadow-[0_10px_24px_rgba(15,23,42,0.06)] sm:p-6 lg:p-7"
                 >
-                  <p className="font-display text-2xl text-[#3F79FF]">{stat.value}</p>
-                  <p className="mt-2 text-xs uppercase tracking-[0.2em] text-[#6D6F76]">{stat.label}</p>
+                  <p className="font-display text-2xl text-[#111318]">{stat.value}</p>
+                  <p className="mt-2 text-sm text-[#6D6F76]">{stat.label}</p>
                 </div>
               ))}
-              </div>
             </div>
-            <div className="hidden lg:block" aria-hidden />
           </div>
+        </div>
       </section>
 
       <div className="hero-divider">
@@ -288,7 +286,7 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="relative isolate px-6 py-20 sm:px-10">
+      <section className="relative isolate px-6 py-16 sm:px-10">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-3xl">
             <span className="section-kicker">Partners</span>
@@ -336,7 +334,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative isolate border-y border-black/5 bg-diagonal-fade px-6 py-24 sm:px-10">
+      <section className="relative isolate border-y border-black/5 bg-diagonal-fade px-6 py-20 sm:px-10">
         <div className="mx-auto max-w-6xl">
           <span className="section-kicker">Yield</span>
           <h2 className="section-heading">How it works - liquidity and yield</h2>
@@ -375,7 +373,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative isolate px-6 py-24 sm:px-10">
+      <section className="relative isolate px-6 py-20 sm:px-10">
         <div className="mx-auto max-w-6xl">
           <span className="section-kicker">Privacy</span>
           <h2 className="section-heading">How it works - practical privacy</h2>
@@ -402,7 +400,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative isolate px-6 py-24 sm:px-10">
+      <section className="relative isolate px-6 py-20 sm:px-10">
         <div className="mx-auto max-w-6xl">
           <span className="section-kicker">Benefits</span>
           <h2 className="section-heading">Fueling your growth</h2>
@@ -441,8 +439,8 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-col items-start gap-2 sm:items-end">
-            <a href="mailto:partners@generic.money" className="hover:text-[#3F79FF]">
-              partners@generic.money
+            <a href="mailto:generic@generic.money" className="hover:text-[#3F79FF]">
+              generic@generic.money
             </a>
           </div>
         </div>

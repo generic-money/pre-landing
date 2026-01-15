@@ -297,7 +297,7 @@
   }
 
   .section-kicker {
-    @apply mb-3 inline-flex items-center gap-2 rounded-full border border-[#D4D6DC] bg-white/70 px-4 py-1 text-[0.72rem] font-medium uppercase tracking-[0.34em] text-[#3F79FF] backdrop-blur;
+    @apply mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/80 px-3 py-1 text-xs font-semibold tracking-[0.08em] text-[#5B6B8C];
   }
 
   .section-heading {
@@ -390,17 +390,18 @@
     padding: 1.55rem 1.25rem 1.2rem;
     border-radius: 1.25rem;
     border: 1px solid rgba(10, 11, 13, 0.08);
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(255, 255, 255, 0.92);
     min-height: 7rem;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
   }
 
   .trust-strip__logo {
     flex-shrink: 0;
     display: grid;
     place-items: center;
-    width: 3.6rem;
-    height: 3.6rem;
-    border-radius: 1.1rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 1rem;
     background: rgba(63, 121, 255, 0.12);
   }
 
@@ -416,15 +417,15 @@
   .trust-strip__logo-stack {
     display: grid;
     place-items: center;
-    width: 2.6rem;
-    height: 2.6rem;
-    border-radius: 0.9rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 0.85rem;
     background: rgba(63, 121, 255, 0.12);
   }
 
   .trust-strip__logo-image {
-    width: 2rem;
-    height: 2rem;
+    width: 2.1rem;
+    height: 2.1rem;
     object-fit: contain;
   }
 
@@ -434,16 +435,16 @@
   }
 
   .trust-strip__meta-label {
-    font-size: 0.68rem;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
     color: rgba(109, 111, 118, 0.9);
+    font-weight: 600;
   }
 
   .trust-strip__meta-value {
     font-size: 0.95rem;
     color: rgba(10, 11, 13, 0.82);
-    font-weight: 500;
+    font-weight: 400;
   }
 
   .trust-strip__item--placeholder {
@@ -830,8 +831,8 @@
     padding: 1.1rem 1.2rem;
     border-radius: 1.6rem;
     border: 1px solid rgba(10, 11, 13, 0.08);
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
   }
 
   .narrative-step__index {
@@ -839,15 +840,15 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 1.1rem;
-    background: rgba(63, 121, 255, 0.1);
+    width: 2.9rem;
+    height: 2.9rem;
+    border-radius: 1rem;
+    background: rgba(63, 121, 255, 0.08);
     font-family: var(--font-display);
     font-size: 0.9rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: rgba(63, 121, 255, 0.95);
+    color: rgba(63, 121, 255, 0.85);
   }
 
   .narrative-step__body {
@@ -862,9 +863,9 @@
   }
 
   .narrative-step__description {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: rgba(57, 59, 64, 0.85);
-    line-height: 1.6;
+    line-height: 1.55;
   }
 
   .benefit-card {
@@ -872,27 +873,27 @@
     overflow: hidden;
     border-radius: 2rem;
     border: 1px solid rgba(10, 11, 13, 0.08);
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.92);
     padding: 1.8rem;
-    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   }
 
   .benefit-card:hover {
     transform: translateY(-3px);
     border-color: rgba(63, 121, 255, 0.28);
-    box-shadow: 0 18px 40px rgba(63, 121, 255, 0.12);
+    box-shadow: 0 16px 36px rgba(63, 121, 255, 0.12);
   }
 
   .benefit-card__icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 1.1rem;
-    background: rgba(63, 121, 255, 0.12);
-    color: rgba(63, 121, 255, 0.95);
+    width: 2.9rem;
+    height: 2.9rem;
+    border-radius: 1rem;
+    background: rgba(63, 121, 255, 0.08);
+    color: rgba(63, 121, 255, 0.9);
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 1.2rem;
@@ -906,9 +907,9 @@
 
   .benefit-card__description {
     margin-top: 0.8rem;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: rgba(57, 59, 64, 0.85);
-    line-height: 1.6;
+    line-height: 1.55;
   }
 
   .proof-card {
