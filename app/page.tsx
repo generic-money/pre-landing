@@ -397,6 +397,24 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-col items-start gap-2 sm:items-end">
+            <div className="flex items-center gap-4">
+              <a
+                href="https://x.com/genericmoney"
+                className="text-xs uppercase tracking-[0.2em] text-[#6D6F76] transition hover:text-[#3F79FF]"
+                target="_blank"
+                rel="noreferrer"
+              >
+                X
+              </a>
+              <a
+                href="https://github.com/generic-money"
+                className="text-xs text-[#6D6F76] transition hover:text-[#3F79FF]"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub
+              </a>
+            </div>
             <a href="mailto:generic@generic.money" className="hover:text-[#3F79FF]">
               generic@generic.money
             </a>
