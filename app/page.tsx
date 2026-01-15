@@ -179,6 +179,10 @@ export default function Home() {
     <main className="relative overflow-hidden bg-[#F5F6FA] text-[#0A0B0D]">
       <div className="pointer-events-none absolute inset-0 -z-20 bg-generic-grid" />
 
+      <div className="top-banner">
+        <span>Coming soon: Deployments on StatusL2 and Citrea</span>
+      </div>
+
       <section className="relative isolate px-6 pb-28 pt-32 sm:px-10 lg:pt-36">
         <div className="hero-surface" />
         <div className="hero-ribbon" />
@@ -216,7 +220,7 @@ export default function Home() {
                 </Link>
 
                 <Link
-                  href="https://docs.generic.money"
+                  href="https://docs.generic.money/protocol/overview"
                   className="inline-flex items-center justify-center rounded-full border border-[#0A0B0D]/20 bg-white/80 px-6 py-2.5 text-base font-medium text-[#0A0B0D] shadow-[0_8px_18px_rgba(15,23,42,0.08)] transition hover:border-[#0A0B0D]/30 hover:bg-white"
                 >
                   <span>Read the docs</span>
