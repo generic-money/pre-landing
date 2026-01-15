@@ -246,7 +246,7 @@ export default function Home() {
       </section>
 
       <section className="relative isolate px-6 py-16 sm:px-10">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
             <span className="section-kicker">Partners</span>
             <h2 className="section-heading">Partners</h2>
@@ -294,7 +294,7 @@ export default function Home() {
       </section>
 
       <section className="relative isolate border-y border-black/5 bg-diagonal-fade px-6 py-20 sm:px-10">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <span className="section-kicker">Yield</span>
           <h2 className="section-heading">How it works - liquidity and yield</h2>
           <p className="mt-4 max-w-3xl text-lg text-[#393B40]">
@@ -333,7 +333,7 @@ export default function Home() {
       </section>
 
       <section className="relative isolate px-6 py-20 sm:px-10">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <span className="section-kicker">Privacy</span>
           <h2 className="section-heading">How it works - practical privacy</h2>
           <p className="mt-4 max-w-3xl text-lg text-[#393B40]">
@@ -360,7 +360,7 @@ export default function Home() {
       </section>
 
       <section className="relative isolate px-6 py-20 sm:px-10">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <span className="section-kicker">Benefits</span>
           <h2 className="section-heading">Fueling your growth</h2>
           <p className="mt-4 max-w-3xl text-lg text-[#393B40]">
