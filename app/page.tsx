@@ -272,13 +272,13 @@ export default function Home() {
               {heroStats.map((stat) => (
                 <div
                   key={stat.value}
-                  className="relative h-full rounded-3xl border border-black/[0.08] bg-white/90 p-5 shadow-[0_10px_24px_rgba(15,23,42,0.06)] sm:p-6 lg:p-7"
+                  className="relative h-full rounded-3xl border border-black/[0.08] bg-white/70 p-5 shadow-[0_10px_24px_rgba(15,23,42,0.06)] backdrop-blur-sm sm:p-6 lg:p-7"
                 >
                   <span className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full bg-black/5 text-[#1A1C20] sm:right-5 sm:top-5">
                     <stat.Icon className="h-4 w-4" aria-hidden />
                   </span>
                   <p className="font-display text-xl text-[#111318]">{stat.value}</p>
-                  <p className="mt-2 text-sm text-[#6D6F76]">{stat.label}</p>
+                  <p className="mt-2 text-[0.92rem] leading-6 text-[#6D6F76]">{stat.label}</p>
                 </div>
               ))}
             </div>
