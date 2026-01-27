@@ -217,7 +217,9 @@ export default function Home() {
               </p>
               <div className="mt-14 flex flex-col items-start gap-4 sm:flex-row">
                 <Link
-                  href="mailto:generic@generic.money"
+                  href="https://app.generic.money"
+                  target="_blank"
+                  rel="noreferrer"
                   className="group inline-flex items-center justify-center rounded-full border border-[#3F79FF] bg-[#3F79FF] px-7 py-2.5 text-base font-medium text-white shadow-[0_10px_24px_rgba(63,121,255,0.2)] transition hover:bg-[#3566d9]"
                 >
                   <span>Generic App</span>
