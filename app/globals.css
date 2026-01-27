@@ -318,6 +318,13 @@
     color: rgba(31, 59, 140, 0.98);
   }
 
+  .top-banner__link {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 600;
+    color: rgba(31, 59, 140, 0.98);
+  }
+
   @media (max-width: 640px) {
     .top-banner {
       height: 36px;
